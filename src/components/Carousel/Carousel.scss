@@ -1,0 +1,45 @@
+@import "../../assets/css/main.scss";
+.carousel-container {
+  .carousel {
+    width: calc(100vw - 40px);
+    height: 200px;
+    z-index: 1;
+    @media (min-width: $break-lg) {
+      width: calc(100vw - 100px);
+    }
+  }
+  .carousel-cell {
+    margin-right: 5px;
+    width: 200px;
+    height: 200px;
+
+    div {
+      position: relative;
+      top: -50px;
+      left: 0;
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      height: 40px;
+      font-size: 24px;
+      a {
+        text-decoration: none;
+        color: $text-white;
+      }
+    }
+  }
+}
+
+.flickity-viewport {
+  height: 300px;
+  .flickity-slider {
+    img {
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+    }
+  }
+}
+
+.flickity-button:disabled {
+  display: none;
+}

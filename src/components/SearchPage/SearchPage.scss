@@ -1,0 +1,41 @@
+@import "../../assets/css/main.scss";
+.search-page {
+  width: calc(100vw - 40px);
+  text-align: center;
+
+  .search-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px;
+    max-width: 1080px;
+    margin: 0 auto;
+
+    h3 {
+      width: 33%;
+    }
+  }
+  .search-result {
+    background: $background-main-light;
+    height: 100vh;
+
+    ul {
+      max-width: 1080px;
+      margin: 0 auto;
+
+      li {
+        padding: 0 16px;
+
+        @media (min-width: $break-lg) {
+          height: 80px;
+          padding: 0 50px;
+        }
+        div {
+          width: 33%;
+          @media (min-width: $break-lg) {
+            width: 26%;
+          }
+        }
+      }
+    }
+  }
+}

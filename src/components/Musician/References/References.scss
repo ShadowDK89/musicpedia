@@ -1,0 +1,209 @@
+@import "../../../assets/css/main.scss";
+
+.references {
+  .ref-container {
+    max-width: 1040px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    .ref-heading {
+      padding: 20px 24px;
+      text-align: center;
+      p {
+        max-width: 350px;
+        margin: 0 auto;
+        text-align: start;
+      }
+
+      .add-source-form {
+        button {
+          margin-top: 15px;
+          height: 40px;
+          width: 120px;
+          font-size: 14px;
+          background: $color-secondary;
+          border: none;
+          border-radius: 5px;
+          color: $text-white;
+
+          @media (min-width: $break-lg) {
+            width: 150px;
+            font-size: 16px;
+          }
+
+          &:active {
+            background: $color-secondary-darker;
+            border: 5px solid lighten($color-secondary, $amount: 10%);
+          }
+        }
+      }
+
+      .error-message {
+        width: 450px;
+        margin: 20px auto 0 auto;
+        color: #6d1119;
+        background: #fdbbc1;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+      }
+    }
+
+    .ref-list-container {
+      height: 80vh;
+      .ul-layout {
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center;
+
+        li {
+          display: flex;
+          background: $light-list-item-main;
+          border-radius: 5px;
+          width: 100%;
+          min-height: 48px;
+          margin-bottom: 2px;
+
+          @media (min-width: $break-lg) {
+            height: 120px;
+            margin-bottom: 4px;
+          }
+
+          &:nth-child(even) {
+            background: $light-list-item-secondary;
+          }
+          .ref-number-container {
+            width: 10%;
+            font-size: 14px;
+            padding: 2px;
+
+            @media (min-width: $break-lg) {
+              font-size: 18px;
+            }
+            span {
+              margin-left: 5px;
+            }
+          }
+
+          .ref-info-left {
+            display: flex;
+            width: 60%;
+            padding: 4px 0;
+
+            .ref-info-headings {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              text-align: right;
+              font-weight: bold;
+              margin-right: 5px;
+            }
+            .ref-info-text {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              overflow: hidden;
+              a {
+                font-size: 14px;
+                @media (min-width: $break-lg) {
+                  font-size: 18px;
+                }
+              }
+              .ref-date {
+                .date-spacer {
+                  margin: 4px;
+                }
+              }
+            }
+          }
+          .ref-rating {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            padding: 4px 0;
+
+            a {
+              font-weight: bold;
+              font-size: 14px;
+              text-decoration: none;
+              color: $text-black;
+              @media (min-width: $break-lg) {
+                font-size: 18px;
+              }
+            }
+            .rate-me {
+              display: flex;
+              flex-flow: row wrap;
+              justify-content: center;
+              width: 70px;
+              @media (min-width: $break-lg) {
+                width: 90px;
+                h5 {
+                  font-size: 16px;
+                }
+              }
+
+              a:nth-of-type(2) {
+                margin-left: auto;
+              }
+            }
+
+            .rate-stars {
+              display: flex;
+              position: relative;
+              transform: rotateY(180deg);
+
+              input {
+                display: none;
+              }
+              label {
+                display: block;
+                cursor: pointer;
+                width: 20px;
+              }
+              label:before {
+                content: "\2605";
+                position: relative;
+                display: block;
+                font-size: 24px;
+                color: #363636;
+              }
+              label:after {
+                content: "\2605";
+                position: absolute;
+                top: 0;
+                display: block;
+                font-size: 24px;
+                color: rgb(250, 239, 81);
+                opacity: 0;
+                transition: 0.2s ease;
+                -webkit-transition: 0.2s;
+                -moz-transition: 0.2s;
+                -ms-transition: 0.2s;
+                -o-transition: 0.2s;
+              }
+              label:hover:after,
+              label:hover ~ label:after,
+              input:checked ~ label:after {
+                opacity: 1;
+              }
+
+              .current-rating:after {
+                content: "\2605";
+                color: rgb(250, 239, 81);
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

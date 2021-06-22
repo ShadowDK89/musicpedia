@@ -1,0 +1,13 @@
+@import "../../assets/css/main.scss";
+.home-component {
+  text-align: center;
+  .welcome-text {
+    margin-bottom: 15px;
+  }
+  h2 {
+    margin-bottom: 25px;
+  }
+  .carousel-search {
+    margin-bottom: 40px;
+  }
+}

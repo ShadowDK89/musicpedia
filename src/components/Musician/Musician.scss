@@ -1,0 +1,76 @@
+@import "../../assets/css/main.scss";
+.musician-main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+
+  .musician-banner {
+    height: 120px;
+    background-size: cover;
+
+    @media (min-width: $break-medium) {
+      height: 200px;
+    }
+    @media (min-width: $break-lg) {
+      height: 300px;
+    }
+  }
+  .musician-container {
+    height: 100vh;
+    width: 100%;
+    background: $background-main-light;
+
+    .musician-nav-container {
+      display: flex;
+      justify-content: center;
+      background: $background-main-light;
+
+      .musician-nav {
+        display: flex;
+        width: 100%;
+        min-height: 36px;
+        overflow: auto hidden;
+        position: relative;
+
+        @media (min-width: $break-lg) {
+          max-width: 1040px;
+          min-height: 42px;
+        }
+        a {
+          text-decoration: none;
+          width: 100%;
+          border-radius: 5px;
+
+          button {
+            @media (min-width: $break-lg) {
+              min-height: 42px;
+              font-size: 18px;
+            }
+            a {
+              text-decoration: none;
+              color: $text-white;
+            }
+          }
+        }
+        #asociated-acts-btn {
+          min-width: 105px;
+        }
+        button.next-btn {
+          width: 40px;
+          position: absolute;
+          right: 0;
+          top: 0;
+          z-index: 10;
+        }
+        button.prev-btn {
+          width: 40px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 10;
+        }
+      }
+    }
+  }
+}

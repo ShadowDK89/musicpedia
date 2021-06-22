@@ -1,0 +1,53 @@
+@import "../../../../../assets/css/main.scss";
+.lyrics-container {
+  background: $background-main-light;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 40px);
+  height: 100% !important;
+
+  @media (min-width: $break-lg) {
+    width: calc(100vw - 80px);
+  }
+
+  .close-button {
+    span {
+      font-size: 16px;
+      @media (min-width: $break-lg) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .lyrics-heading {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 50px 0 25px 0;
+    h1 {
+      margin-bottom: 5px;
+    }
+    .author {
+      width: 45%;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      margin-bottom: 5px;
+      .author-heading {
+        margin-right: 5px;
+        font-weight: bold;
+      }
+    }
+  }
+  .lyrics-text {
+    display: flex;
+    justify-content: center;
+    p {
+      width: 230px;
+      @media (min-width: $break-lg) {
+        width: 350px;
+      }
+    }
+  }
+}

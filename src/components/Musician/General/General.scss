@@ -1,0 +1,53 @@
+@import "../../../assets/css/main.scss";
+.musician-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0;
+
+  @media (min-width) {
+  }
+  .general-container {
+    height: 80vh;
+    width: 90%;
+    max-width: 1080px;
+    @media (min-width: $break-lg) {
+      padding-top: 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .intro-box {
+      display: flex;
+      width: 100%;
+      margin-top: 24px;
+
+      .musician-img {
+        height: 100px;
+        width: 100px;
+        border: 1px solid grey;
+        @media (min-width: $break-lg) {
+          height: 200px;
+          width: 200px;
+          margin-left: 36px;
+        }
+      }
+      .intro-text {
+        display: flex;
+        flex-direction: column;
+        margin-left: 24px;
+        font-size: 14px;
+        @media (min-width: $break-lg) {
+          margin-left: 35px;
+        }
+      }
+    }
+    .intro-desc {
+      width: 100%;
+      margin-top: 26px;
+      @media (min-width: $break-lg) {
+        margin-left: 36px;
+      }
+    }
+  }
+}

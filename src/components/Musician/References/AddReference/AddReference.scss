@@ -1,0 +1,90 @@
+@import "../../../../assets/css/main.scss";
+
+.add-ref {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100vw - 40px);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+
+  @media (min-width: $break-lg) {
+    width: calc(100vw - 80px);
+    left: 80px;
+  }
+
+  .add-ref-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    width: 350px;
+    background: $background-light;
+    border-radius: 5px;
+
+    h2 {
+      padding-top: 20px;
+    }
+
+    .add-ref-form {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      padding: 10px;
+
+      input {
+        height: 25px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.322);
+      }
+    }
+    button {
+      margin: 15px auto 0;
+      height: 40px;
+      font-size: 16px;
+      background: $color-secondary;
+      border: none;
+      border-radius: 5px;
+      color: $text-white;
+      &:active {
+        background: $color-secondary-darker;
+        border: 5px solid lighten($color-secondary, $amount: 10%);
+      }
+    }
+  }
+}
+
+.cancel-add {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  align-items: center;
+  font-size: 16px;
+
+  span {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.not-logged-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin: 20px auto 0 auto;
+  background: #fdbbc1;
+  height: 80px;
+  border-radius: 5px;
+
+  h1 {
+    color: #6d1119;
+    margin: 0 !important;
+  }
+}

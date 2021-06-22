@@ -1,0 +1,30 @@
+@import "../../../assets/css/main.scss";
+.musician-details {
+  padding: 24px 12%;
+  margin: 0px;
+  display: flex;
+  padding-top: 16px;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $break-xl) {
+    padding: 24px 0;
+  }
+  .musician-details-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1040px;
+    width: 100%;
+    height: 80vh;
+    align-items: center;
+    padding-top: 50px;
+
+    .musician-desc-section {
+      width: 100%;
+      margin-bottom: 28px;
+      h3 {
+        margin-bottom: 14px;
+      }
+    }
+  }
+}

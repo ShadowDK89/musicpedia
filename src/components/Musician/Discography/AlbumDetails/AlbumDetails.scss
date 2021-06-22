@@ -1,0 +1,122 @@
+@import "../../../../assets/css/main.scss";
+.album-details {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: 100vh !important;
+  width: calc(100vw - 40px);
+  position: absolute;
+  top: 0;
+  left: 40px;
+  background: $background-main-light;
+
+  @media (min-width: $break-lg) {
+    width: calc(100vw - 80px);
+    left: 80px;
+  }
+
+  .close-button {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin-top: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+
+    span {
+      font-size: 16px;
+      @media (min-width: $break-lg) {
+        font-size: 20px;
+      }
+    }
+  }
+  .album-details-header {
+    display: flex;
+    width: 90%;
+    max-width: 1080px;
+    margin: 35px 30px 20px;
+    justify-content: space-around;
+    font-size: 14px;
+    font-weight: bold;
+    .album-img {
+      height: 100px;
+      @media (min-width: $break-lg) {
+        height: 200px;
+      }
+    }
+    .album-desc {
+      width: 50%;
+      @media (min-width: $break-lg) {
+        padding-top: 10px;
+        width: 60%;
+      }
+    }
+  }
+  .album-details-content {
+    width: 100%;
+    max-width: 1080px;
+    .tracklist {
+      .single-track {
+        padding: 6px 0;
+        font-weight: bold;
+        .single-track-left {
+          flex-flow: row;
+          width: 100%;
+          display: flex;
+
+          .tracknumber {
+            display: flex;
+            justify-content: flex-end;
+            width: 50px;
+            font-size: 16px;
+          }
+        }
+        .track-details {
+          width: 100%;
+          margin-left: 8px;
+          .track-title {
+            font-size: 16px;
+            margin-bottom: 2px;
+
+            @media (min-width: $break-lg) {
+              font-size: 18px;
+            }
+          }
+          .authors {
+            display: flex;
+            flex-flow: column nowrap;
+            width: 100%;
+            .author-names {
+              display: flex;
+              flex-flow: row;
+              width: 100%;
+              margin-bottom: 2px;
+
+              .author-heading {
+                flex-shrink: 0;
+                margin-right: 5px;
+              }
+
+              div {
+                display: flex;
+                flex-flow: column;
+                padding-bottom: 2px;
+                font-weight: normal;
+              }
+            }
+          }
+        }
+        .lyrics-link {
+          width: 20%;
+          margin-right: 10%;
+          cursor: pointer;
+
+          @media (min-width: $break-lg) {
+            width: 20%;
+            margin-right: 15%;
+          }
+        }
+      }
+    }
+  }
+}
