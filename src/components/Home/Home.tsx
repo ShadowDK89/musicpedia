@@ -3,13 +3,17 @@ import { TCarousel } from '../../Models/TCarousel';
 import Carousel from '../Carousel/Carousel';
 import './Home.scss'
 import { useAuth } from '../../context/AuthContext'
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { setMusicianData } from '../../redux/ducks/musicianSlice';
+import { TMusicianData } from '../../Models/TMusicianData';
 
 const Home = () => {
     const defaultCarousel:TCarousel[] = [];
     const [popularSearches, setPopularSearches] = useState(defaultCarousel);
     const [latestSearches, setLatestSearches] = useState(defaultCarousel);
     const { currentUser } = useAuth();
-
+    const dispatch = useAppDispatch();
+    const music = useAppSelector((state) => state.musicianData);
 
     useEffect(() => {
         setPopularSearches([{name: 'Wolf', source: 'https://www.powerofmetal.dk/interviews14/images/wolfband.jpg'},
@@ -23,6 +27,27 @@ const Home = () => {
         {name: 'Battle Beast', source: 'https://www.nuclearblast.de/en/data/bands/battle-beast/bandfotos/2018/battlebeast-2018-2.jpg'}
         ]);
     }, [])
+
+/*     useEffect(() => {
+        const test:TMusicianData = {
+            id: '1',
+            name: 'Ett band',
+            origin: [],
+            genres:[],
+            shortDesc: 'Beskrivning',
+            yearsActive: '',
+            imgBanner: '',
+            imgMusician: '',
+            members: [],
+            discography: [],
+            longDesc: {articleSections: []},
+            asociatedActs: []
+        }
+
+        dispatch(setMusicianData(test))
+        
+    }, [dispatch])
+    console.log(music); */
 
 
     return (
