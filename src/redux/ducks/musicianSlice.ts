@@ -1,18 +1,42 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { TMusicianData } from "../../Models/TMusicianData";
 
-const musicianSlice = createSlice({
-    name:'musicianData',
-    initialState: <TMusicianData>{},
-    reducers:{
-        getMusicianData() {},
-        setMusicianData(state, action){
-            const userData = action.payload;
-            return {...state, ...userData};
-        }
-    }
-})
+type MusicianDataSlice = {
+  musicianData: TMusicianData;
+};
 
-export const { getMusicianData, setMusicianData} = musicianSlice.actions;
+const initialState: MusicianDataSlice = {
+  musicianData: {
+    id: "",
+    name: "",
+    genres: [],
+    origin: [],
+    shortDesc: "",
+    yearsActive: "",
+    imgBanner: "",
+    imgMusician: "",
+    members: [],
+    discography: [],
+    longDesc: {
+      articleSections: [],
+    },
+    asociatedActs: [],
+  },
+};
+
+const musicianSlice = createSlice({
+  name: "musicianData",
+  initialState: initialState,
+  reducers: {
+    setMusicianData(state, action: PayloadAction<TMusicianData>) {
+      return {
+        ...state,
+        musicianData: action.payload,
+      };
+    },
+  },
+});
+
+export const { setMusicianData } = musicianSlice.actions;
 
 export default musicianSlice.reducer;
